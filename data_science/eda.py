@@ -1,7 +1,6 @@
 import pandas
 import numpy
 from scipy import stats
-import matplotlib.pyplot as plt
 
 
 def identify_outliers(dataframe: pandas.DataFrame, column: str):

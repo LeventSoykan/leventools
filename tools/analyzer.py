@@ -31,14 +31,14 @@ def return_type(func):
     return wrapper
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-    # @timer
-    # def wait(name):
-    #     time.sleep(1.5)
-    #     print(f'Hello {name}')
-    #
-    # wait('Levent')
+    @timer
+    def wait(name):
+        time.sleep(2)
+        print(f'Hello {name}')
+
+    wait('Levent')
     #
     # @return_type
     # def return_func(num1, num2):

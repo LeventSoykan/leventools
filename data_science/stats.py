@@ -1,9 +1,12 @@
-##These methods are received from Datacamp Customer Analytics and AB Testing Course
+# These methods are received from DataCamp Customer Analytics and AB Testing Course
 
-import scipy.stats
+from scipy import stats
+
 
 def get_power(n, p1, p2, cl):
-    '''Returns the power of our hypothesis test by number of samples,probabilities (conversion_rate) and confidence level'''
+    """Returns the power of our hypothesis test by number of samples,
+    probabilities (conversion_rate) and confidence level
+    """
     alpha = 1 - cl
 
     qu = stats.norm.ppf(1 - alpha / 2)
@@ -24,7 +27,8 @@ def get_power(n, p1, p2, cl):
 
 
 def get_sample_size(power, p1, p2, cl, max_n=1000000):
-    '''calculates the power for different test size until it reaches the desired power level, and returns the test size'''
+    """calculates the power for different test size until it reaches the desired power level,
+    and returns the test size"""
     n = 1
     while n <= max_n:
         tmp_power = get_power(n, p1, p2, cl)
