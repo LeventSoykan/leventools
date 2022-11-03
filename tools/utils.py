@@ -10,8 +10,7 @@ def run_n_times(n):
     return decorator
 
 
-if __name__ == '__main__':
-
+# if __name__ == '__main__':
 
     # @timer
     # def wait(name):

@@ -1,5 +1,7 @@
 import pandas
 import numpy
+from scipy import stats
+import matplotlib.pyplot as plt
 
 
 def identify_outliers(dataframe: pandas.DataFrame, column: str):
@@ -20,3 +22,9 @@ def identify_outliers(dataframe: pandas.DataFrame, column: str):
 def remove_outliers(dataframe: pandas.DataFrame, column: str):
     _, lower, upper = identify_outliers(dataframe, column)
     return dataframe[(dataframe[column] >= lower) & (dataframe[column] <= upper)]
+
+
+def chi2_correlation(dataframe: pandas.DataFrame, column1: str, column2: str):
+    contingency_table = pandas.crosstab(dataframe[column1], dataframe[column2], margins=False)
+    stat, p, dof, expected = stats.chi2_contingency(contingency_table)
+    return p, contingency_table

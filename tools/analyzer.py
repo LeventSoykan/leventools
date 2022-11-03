@@ -31,7 +31,7 @@ def return_type(func):
     return wrapper
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
     # @timer
     # def wait(name):
