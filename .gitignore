@@ -1,2 +1,4 @@
 *.ipnyb
 .idea/*
+__pycache__/*
+*.pyc
