@@ -1,11 +1,39 @@
+"""
+Module for analysis of python functions
+"""
+
 import pandas
 import time
 from functools import wraps
 
 
 def timer(func):
+    """Calculate and print duration of function
+
+    Parameters
+    ----------
+    func : Function:
+        
+
+    Returns
+    -------
+
+    """
     @wraps(func)
     def wrapper(*args, **kwargs):
+        """
+
+        Parameters
+        ----------
+        *args : Arguments
+            
+        **kwargs : Keyword Arguments
+            
+
+        Returns
+        -------
+        Output: output of inner function.
+        """
         start = pandas.Timestamp('today')
         val = func(*args, **kwargs)
         end = pandas.Timestamp('today')
@@ -17,8 +45,32 @@ def timer(func):
 
 
 def return_type(func):
+    """Print the return type of inner function
+
+    Parameters
+    ----------
+    func : Function:
+        
+
+    Returns
+    -------
+
+    """
     @wraps(func)
     def wrapper(*args, **kwargs):
+        """
+
+        Parameters
+        ----------
+        *args : Arguments
+            
+        **kwargs : Keyword arguments
+            
+
+        Returns
+        -------
+        Output: output of inner function.
+        """
         val = func(*args, **kwargs)
         if not val:
             print(f'Process does not return any value - {type(val)}')
@@ -26,7 +78,6 @@ def return_type(func):
             print([type(n) for n in val])
         else:
             print(type(val))
-        # print(val)
         return val
     return wrapper
 

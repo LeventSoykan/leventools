@@ -1,3 +1,7 @@
+"""
+Module for handling files, directories and databases
+"""
+
 import contextlib
 import os
 import sqlite3
@@ -5,6 +9,17 @@ import sqlite3
 
 @contextlib.contextmanager
 def working_directory(path):
+    """Change the working directory during process by context manager
+
+    Parameters
+    ----------
+    path : str: Path for target directory
+        
+
+    Returns
+    -------
+    None
+    """
     cwd = os.getcwd()
     os.chdir(path)
     yield None
@@ -13,6 +28,17 @@ def working_directory(path):
 
 @contextlib.contextmanager
 def sqlite_database(path):
+    """Connect to sqlite database from path and disconnect after operation using context manager
+
+    Parameters
+    ----------
+    path : Path to sqlite database file
+        
+
+    Yields
+    -------
+    conn: sqlite.Connection : Connection object for db operations
+    """
     conn = None
     try:
         conn = sqlite3.connect(path)

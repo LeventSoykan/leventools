@@ -1,10 +1,48 @@
+"""
+Module for python helper methods
+"""
+
 from functools import wraps
 
 
 def run_n_times(n):
-    """Define and return a decorator"""
+    """Returns a decorator to run decorated function n number of times
+
+    Parameters
+    ----------
+    n : int : Number of times to run function
+        
+
+    Returns
+    -------
+
+    """
     def decorator(func):
+        """
+
+        Parameters
+        ----------
+        func : function:
+            
+
+        Returns
+        -------
+
+        """
         def wrapper(*args, **kwargs):
+            """
+
+            Parameters
+            ----------
+            *args : Arguments of wrapped function
+                
+            **kwargs : Keyword arguments of wrapped function
+                
+
+            Returns
+            -------
+            None
+            """
             for i in range(n):
                 func(*args, **kwargs)
         return wrapper
@@ -13,12 +51,34 @@ def run_n_times(n):
 
 def memoize(func):
     """Store the results of the decorated function for fast lookup
+
+    Parameters
+    ----------
+    func : Function:
+        
+
+    Returns
+    -------
+
     """
 
     cache = {}
 
     @wraps(func)
     def wrapper(*args, **kwargs):
+        """
+
+        Parameters
+        ----------
+        *args : Arguments of wrapped function
+            
+        **kwargs : Keyword arguments of wrapped function
+            
+
+        Returns
+        -------
+        Output: output of internal function or cache
+        """
         # If these arguments haven't been seen before,
         if (args, str(kwargs)) not in cache.keys():
             print('not in cache')
