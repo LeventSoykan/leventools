@@ -6,4 +6,5 @@ setup(
     name='leventools',
     version='0.1.0',
     packages=find_packages(include=['leventools', 'leventools.*'])
+    python_requires='>=3.6'
 )
