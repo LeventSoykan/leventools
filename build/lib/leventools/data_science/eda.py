@@ -89,4 +89,3 @@ def chi2_correlation(dataframe: pandas.DataFrame, column1: str, column2: str):
     contingency_table = pandas.crosstab(dataframe[column1], dataframe[column2], margins=False)
     stat, p, dof, expected = stats.chi2_contingency(contingency_table)
     return p, contingency_table
-

@@ -4,7 +4,7 @@ leventools is a package for miscellaneous tools for data science and python
 ## Installation
 Pull this repo and run below command in top folder
 ```
-pip install .
+pip install leventools
 ```
 
 ## Usage

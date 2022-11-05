@@ -1,9 +1,12 @@
+LICENSE
+MANIFEST.in
 README.md
 setup.py
 leventools/__init__.py
 leventools.egg-info/PKG-INFO
 leventools.egg-info/SOURCES.txt
 leventools.egg-info/dependency_links.txt
+leventools.egg-info/requires.txt
 leventools.egg-info/top_level.txt
 leventools/data_science/__init__.py
 leventools/data_science/eda.py
