@@ -82,23 +82,23 @@ def return_type(func):
     return wrapper
 
 
-if __name__ == '__main__':
-
-    @timer
-    def wait(name):
-        time.sleep(2)
-        print(f'Hello {name}')
-
-    wait('Levent')
-    #
-    # @return_type
-    # def return_func(num1, num2):
-    #     return num1*30
-    #
-    # print(return_func(1, 3))
-
-    # @run_n_times(3)
-    # def greet(name):
-    #     print(f'Hello {name}')
-    #
-    # greet('Levent')
+# if __name__ == '__main__':
+#
+#     @timer
+#     def wait(name):
+#         time.sleep(2)
+#         print(f'Hello {name}')
+#
+#     wait('Levent')
+#     #
+#     # @return_type
+#     # def return_func(num1, num2):
+#     #     return num1*30
+#     #
+#     # print(return_func(1, 3))
+#
+#     # @run_n_times(3)
+#     # def greet(name):
+#     #     print(f'Hello {name}')
+#     #
+#     # greet('Levent')
